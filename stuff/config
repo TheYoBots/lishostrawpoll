@@ -1,0 +1,20 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+[remote "origin"]
+	url = https://github.com/TheYoBots/lishostrawpoll
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[user]
+	name = TheYoBots
+	email = yobot_v@outlook.com
+	[credential "https://github.com/TheYoBots/lishostrawpoll"]
+		username = TheYoBots
+	
+[branch "master"]
+	remote = origin
+	merge = refs/heads/master
+[remote "upstream"]
+	url = https://github.com/TheYoBots/lishostrawpoll
+	fetch = +refs/heads/*:refs/remotes/upstream/*
