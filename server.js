@@ -144,7 +144,7 @@ const uri = process.env.MONGODB_URI
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true })
 
 const passport = require('passport')
-const LichessStrategy = require('passport-lichess').Strategy
+const LichessStrategy = require('passport-li').Strategy
 const DiscordStrategy = require('passport-discord').Strategy
 const GithubStrategy = require('passport-github').Strategy
 
