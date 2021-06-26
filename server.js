@@ -144,7 +144,7 @@ const uri = process.env.MONGODB_URI
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true })
 
 const passport = require('passport')
-const LishogiStrategy = require('passport-lishogi').Strategy
+const LichessStrategy = require('passport-lichess').Strategy
 const DiscordStrategy = require('passport-discord').Strategy
 const GithubStrategy = require('passport-github').Strategy
 
@@ -256,15 +256,14 @@ function addStrategy(app, props, strategy){
     )
 }
 
-if(process.env.LISHOGI_CLIENT_ID) addStrategy(app, {
-    tag: "lishogi",
-    clientID: process.env.LISHOGI_CLIENT_ID || "some client id",
-    clientSecret: process.env.LISHOGI_CLIENT_SECRET || "some client secret",
-    authURL: "/auth/lishogi",
+if(process.env.LICHESS_CLIENT_ID) addStrategy(app, {
+    tag: "lichess",
+    clientID: process.env.LICHESS_CLIENT_ID || "some client id",
+    authURL: "/auth/lichess",
 	scope: "",
-    failureRedirect: "/?lishogilogin=failed",
-    okRedirect: "/?lishogilogin=ok"
-}, LishogiStrategy)
+    failureRedirect: "/?lichesslogin=failed",
+    okRedirect: "/?lichesslogin=ok"
+}, LichessStrategy)
 
 if(process.env.DISCORD_CLIENT_ID) addStrategy(app, {
     tag: "discord",
@@ -387,7 +386,7 @@ app.get('/', (req, res) => {
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Lishogi Straw Poll</title>    
+    <title>Lichess Straw Poll</title>    
     <script src="https://unpkg.com/@easychessanimations/foo@1.0.43/lib/fooweb.js"></script>
 	<script src="https://unpkg.com/@easychessanimations/sse/lib/sseclient.js"></script>
 	<link rel="stylesheet" href="style.css">
@@ -395,14 +394,14 @@ app.get('/', (req, res) => {
   <body>
 
 	<div style="padding: 3px; background-color: #eee; margin-bottom: 6px;">
-		${req.user ? "logged in as <b>" + req.user.username + "</b> | <a href='/logout'>log out</a>" : "<a href='/auth/lishogi'>log in with lishogi</a> | <a href='/auth/discord'>log in with Discord</a> | <a href='/auth/github'>log in with GitHub</a>"} 
+		${req.user ? "logged in as <b>" + req.user.username + "</b> | <a href='/logout'>log out</a>" : "<a href='/auth/lichess'>log in with lichess</a> | <a href='/auth/discord'>log in with Discord</a> | <a href='/auth/github'>log in with GitHub</a>"} 
 	| <a href="/?latest=true">view latest transactions</a> 
 	| <a href="/">home</a>
 	</div>
 
     <div id="root"></div>
 	<hr>
-	<a href="https://lishogi.org/@/YoBot_v2" rel="noopener noreferrer" target="_blank">YoBot_v2</a> | 
+	<a href="https://lichess.org/@/YoBot_v2" rel="noopener noreferrer" target="_blank">YoBot_v2</a> | 
 	<a href="https://github.com/TheYoBots/lishostrawpoll" rel="noopener noreferrer" target="_blank">GitHub Source Code</a>	
 	<script>
 		var USER = ${JSON.stringify(req.user || {}, null, 2)}
@@ -417,5 +416,5 @@ app.get('/', (req, res) => {
 })
 
 app.listen(port, () => {
-	console.log(`mongodbtest listening at port ${port}`)
+	console.log(`mongodb listening at port ${port}`)
 })

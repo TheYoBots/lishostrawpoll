@@ -1,6 +1,6 @@
 # lishostrawpoll
 
-Lishogi Straw Poll.
+Lichess Straw Poll.
 
 ## Online
 

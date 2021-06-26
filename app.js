@@ -55,7 +55,7 @@ function genLink(href, display){
 }
 
 function userLink(username){
-	return genLink(`https://lishogi.org/@/${username}`, username)
+	return genLink(`https://lichess.org/@/${username}`, username)
 }
 
 function api(topic, payload){
@@ -217,7 +217,7 @@ class SmartPoll_ extends SmartdomElement_{
 				,
 				ControlButton(_ => this.delete()).html("Delete").bc("#faa").marr(10).op(this.isMine() ? 1 : 0.5)
 			),
-			collapsed ? div() : div().marl(10).pad(2).bc(this.isMine() ? "#9e9" : "#eee").html(`by <b style="color:#070">${this.poll.author.username}</b> <small><i><a href="https://lishogi.org/@/${this.poll.author.username}" rel="noopener noreferrer" target="_blank">view profile</a> </i>created at ${new Date(this.poll.createdAt).toLocaleString()} ${this.poll.pollId}	</small>`),
+			collapsed ? div() : div().marl(10).pad(2).bc(this.isMine() ? "#9e9" : "#eee").html(`by <b style="color:#070">${this.poll.author.username}</b> <small><i><a href="https://lichess.org/@/${this.poll.author.username}" rel="noopener noreferrer" target="_blank">view profile</a> </i>created at ${new Date(this.poll.createdAt).toLocaleString()} ${this.poll.pollId}	</small>`),
 			this.optionsDiv = collapsed ? div() : div().pad(2).marl(10).bc("#de9").a(
 				this.poll.options.sort((a,b) => SORT_UNIQUE() ? b.getNumVoters() - a.getNumVoters() : b.getNumVotes() - a.getNumVotes())
 					.map(option => SmartOption({option: option, parentPoll: this}))
