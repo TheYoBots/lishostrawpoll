@@ -417,5 +417,5 @@ app.get('/', (req, res) => {
 })
 
 app.listen(port, () => {
-	console.log(`mongodbtest listening at port ${port}`)
+	console.log(`mongodb listening at port ${port}`)
 })

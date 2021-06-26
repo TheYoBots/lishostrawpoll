@@ -433,12 +433,12 @@ passport-github@^1.1.0:
   dependencies:
     passport-oauth2 "1.x.x"
 
-passport-lishogi@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/passport-lishogi/-/passport-lishogi-1.1.0.tgz#96d3df33b38479b989cecbffdf0f5f11aae27767"
-  integrity sha512-8qYSjiUigiUmEyI7MGA1HLI8hhD5zBR/FmH4cgBxw1iH1H3DRrPiS0bvgCyh5/gzqYM+9MLg+I04JK3zXHrgMQ==
+passport-lishogi@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/passport-lishogi/-/passport-lishogi-1.1.1.tgz#cd0a767889dcdc67676e5b8de66930f4435e2590"
+  integrity sha512-e8NpwnPqNdjEawvBsUmvX/3pFALCCH2e0bRGPCsbvJWbQCCLy1AwHljpFg98B0AWJh9x7/gXMrl8K65GGJuk3A==
   dependencies:
-    passport-oauth2 "^1.5.0"
+    passport-oauth2 "1.x.x"
 
 passport-oauth2@1.x.x, passport-oauth2@^1.5.0:
   version "1.5.0"
